@@ -1,0 +1,43 @@
+# start a terminal
+bindsym $mod+Return exec alacritty
+
+# start Google Chrome
+bindsym $mod+b exec google-chrome-stable
+
+# start Slack
+bindsym $mod+s+l exec slack
+
+# start Okular
+bindsym $mod+o exec okular
+
+# start Calibre
+bindsym $mod+c exec calibre
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# lock screen
+bindsym XF86ScreenSaver exec swaylock --image ~/.config/wallpapers/spacing_out.jpg
+
+# brightness up
+bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 5%-
+
+# logout
+bindsym $mod+Shift+e exit
+
+# split in horizontal orientation
+# bindsym $mod+h splith
+# split in vertical orientation
+# bindsym $mod+v splitv
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# focus/select the whole screen
+bindsym $mod+a focus parent

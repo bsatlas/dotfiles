@@ -1,0 +1,102 @@
+set $mod Mod4
+
+include hotkeys
+include workspaces
+
+# Font for window titles
+font Hack Regular 12, FontAwesome 12
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+
+ # _move_ the focused window with the same, but add Shift
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# reload the configuration file
+bindsym $mod+Shift+r reload
+
+# Scratchpad:
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show scratchpad
+bindsym $mod+minus scratchpad show
+
+# Audio Controls
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+
+#bindsym X86AudioMute exec amixer set Master 1+ toggle # mute sound
+
+#bindsym $mod+X86AudioMute exec alsactl restore # unmute sound
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+floating_minimum_size 800 x 400
+
+default_border pixel 2
+gaps outer 8
+gaps inner 8
+
+# Status bar
+bar {
+        status_command py3status -c ~/.config/py3status/config
+        status_padding 3
+        status_edge_padding 3
+        colors {
+        background #282A36
+        statusline #F8F8F2
+        separator  #44475A
+
+        focused_workspace  #44475A #44475A #F8F8F2
+        active_workspace   #282A36 #44475A #F8F8F2
+        inactive_workspace #282A36 #282A36 #BFBFBF
+        urgent_workspace   #FF5555 #FF5555 #F8F8F2
+        binding_mode       #FF5555 #FF5555 #F8F8F2
+        }
+        font Hack 10, FontAwesome 12
+}
+
+# class           		 border  backgr  text   indicator child_border
+client.focused          #F8F8F2 #6272A4 #F8F8F2 #6272A4   #F8F8F2
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.background       #282A36
+
+
+
+# Trackpad
+input 1160:4122:DELL0A20:00_0488:101A_Touchpad {
+    tap enabled
+    middle_emulation enabled
+    scroll_method two_finger
+    natural_scroll enabled
+    dwt enabled
+}

@@ -1,0 +1,114 @@
+# Monitors
+#output HDMI-A-1 resolution 1920x1080 position 1920,0
+#output HDMI-A-1 resolution 3840x2160@60Hz position 0,0
+
+output eDP-1 resolution 1920x1080 position 0,0
+#output eDP-2 resolution 1920x1080 position 1920,0
+output HDMI-A-1 resolution 1366x768 position 1920,0
+#output DP-4 resolution 1920x1080 position 1920,0
+#output DP-3 resolution 1920x1080 position 1920,0
+#output DP-3 resolution 3840x2160@60Hz position 1920,0
+
+
+# Wallpapers
+#output eDP-1 bg ~/.config/wallpapers/fallen-titan.jpg stretch
+#output VGA-1 bg ~/.config/wallpapers/black_hole.jpg stretch
+
+# workspace names
+set $WS1  "1:"
+set $WS2  "2:"
+set $WS3  "3:"
+set $WS4  "4:"
+set $WS5  "5:"
+set $WS6  "6:"
+set $WS7  "7:"
+set $WS8  "8:"
+set $WS9  "9:"
+set $WS10 "10:"
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS10
+
+# auto-start workspaces
+assign [title="terminal"] $WS1
+for_window [title="terminal"] border pixel 0
+exec termite --title=terminal
+
+for_window [class="Firefox"] border pixel 0
+
+assign [title="workspace"] $WS3
+exec termite --directory=workspace --title=workspace
+
+assign [title="mutt"] $WS4
+for_window [title="mutt"] border pixel 0
+exec termite --exec=neomutt --title=mutt
+
+assign [title="weechat"] $WS5
+for_window [title="weechat"] border pixel 0
+exec termite --exec=weechat --title=weechat
+
+assign [title="cmus"] $WS6
+for_window [title="cmus"] border pixel 0
+exec termite --exec=cmus --title=cmus
+
+assign [title="calendar"] $WS7
+for_window [title="calendar"] border pixel 0
+exec termite --exec="calcurse" --title=calendar --hold
+
+assign [title="htop"] $WS8
+for_window [title="htop"] border pixel 0
+exec termite --exec=htop --title=htop
+
+
+# Move workspaces to appropriate windows
+#workspace $WS1 output DP-3
+#workspace $WS2 output DP-3
+#workspace $WS3 output DP-3
+#workspace $WS4 output DP-3
+#workspace $WS5 output DP-3
+#workspace $WS6 output DP-3
+#workspace $WS7 output DP-3
+#workspace $WS8 output DP-3
+#workspace $WS9 output DP-3
+#workspace $WS10 output DP-3
+
+workspace $WS1 output eDP-1
+workspace $WS2 output eDP-1
+workspace $WS3 output eDP-1
+workspace $WS4 output eDP-1
+workspace $WS5 output eDP-1
+workspace $WS6 output eDP-1
+
+#workspace $WS7 output DP-3
+#workspace $WS8 output DP-3
+#workspace $WS9 output DP-3
+#workspace $WS10 output DP-3
+
+workspace $WS7 output HDMI-A-1
+workspace $WS8 output HDMI-A-1
+workspace $WS9 output HDMI-A-1
+workspace $WS10 output HDMI-A-1
+
+workspace $WS7
+workspace "1:"

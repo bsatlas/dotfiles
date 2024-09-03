@@ -1,0 +1,28 @@
+order += "clock"
+order += "wifi"
+order += "battery_level"
+
+clock {
+		format = "{America/Chicago}"
+        format_time = "%A, %b %-d %Y - %-I:%M %p"
+}
+
+battery_level {
+        battery_id = "all"
+		format = "{percent}%"
+        hide_seconds = true
+		color_bad = "#F85450"
+		color_charging = "#F8FC50"
+		color_degraded ="#A80000"
+		color_good = "#50FC50"
+        cache_timeout = 1
+}
+
+wifi {
+		device = "wlp0s20f3"
+		format = ""
+		color_bad = "#F85450"
+		color_degraded ="#A80000"
+		color_good = "#50FC50"
+        cache_timeout = 1
+}
