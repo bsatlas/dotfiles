@@ -1,0 +1,3 @@
+[submodule "/home/atlas/.config/zsh/themes/dracula-zsh"]
+	path = /home/atlas/.config/zsh/themes/dracula-zsh
+	url = https://github.com/dracula/zsh
