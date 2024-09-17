@@ -9,7 +9,7 @@ vim.opt.cursorline = true
 vim.opt.path:append("**")
 vim.opt.syntax = 'on'
 vim.opt.errorbells = false
-vim.opt.errorformat:append([[%*["]%f%*["]\,\ line\ %l:\ %m]])
+vim.opt.errorformat = vim.opt.errorformat + [[%f: line %l: %m]]
 vim.opt.number = true
 vim.opt.backspace = { "indent", "eol", "start" }
 vim.opt.swapfile = false
@@ -45,6 +45,18 @@ vim.opt.shiftround = true
 vim.opt.colorcolumn = '81'
 
 vim.cmd('silent! helptags ALL')
+
+vim.g.clipboard = {
+    name = 'wl-clipboard',
+    copy = {
+        ['+'] = 'wl-copy',
+        ['*'] = 'wl-copy',
+    },
+    paste = {
+        ['+'] = 'wl-paste',
+        ['*'] = 'wl-paste',
+    },
+}
 
 
 -- save all open buffers when neovim loses focus.
