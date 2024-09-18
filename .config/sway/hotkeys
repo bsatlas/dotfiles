@@ -20,8 +20,8 @@ bindsym $mod+Shift+q kill
 bindsym XF86ScreenSaver exec swaylock --image ~/.config/wallpapers/spacing_out.jpg
 
 # brightness up
-bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight set +5%
-bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl -d amdgpu_bl1 set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl -d amdgpu_bl1 set 5%-
 
 # logout
 bindsym $mod+Shift+e exit

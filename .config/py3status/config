@@ -19,7 +19,7 @@ battery_level {
 }
 
 wifi {
-		device = "wlp0s20f3"
+		device = "wlp6s0"
 		format = ""
 		color_bad = "#F85450"
 		color_degraded ="#A80000"

@@ -53,32 +53,32 @@ bindsym $mod+Shift+0 move container to workspace $WS10
 # auto-start workspaces
 assign [title="terminal"] $WS1
 for_window [title="terminal"] border pixel 0
-exec termite --title=terminal
+exec alacritty --title=terminal
 
 for_window [class="Firefox"] border pixel 0
 
 assign [title="workspace"] $WS3
-exec termite --directory=workspace --title=workspace
+exec alacritty --directory=workspace --title=workspace
 
 assign [title="mutt"] $WS4
 for_window [title="mutt"] border pixel 0
-exec termite --exec=neomutt --title=mutt
+exec alacritty --command=neomutt --title=mutt
 
 assign [title="weechat"] $WS5
 for_window [title="weechat"] border pixel 0
-exec termite --exec=weechat --title=weechat
+exec alacritty --command=weechat --title=weechat
 
 assign [title="cmus"] $WS6
 for_window [title="cmus"] border pixel 0
-exec termite --exec=cmus --title=cmus
+exec alacritty --command=cmus --title=cmus
 
 assign [title="calendar"] $WS7
 for_window [title="calendar"] border pixel 0
-exec termite --exec="calcurse" --title=calendar --hold
+exec alacritty --command="calcurse" --title=calendar --hold
 
 assign [title="htop"] $WS8
 for_window [title="htop"] border pixel 0
-exec termite --exec=htop --title=htop
+exec alacritty --command=htop --title=htop
 
 
 # Move workspaces to appropriate windows
