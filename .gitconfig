@@ -1,3 +1,9 @@
 [user]
 	email = atlaskerr@gmail.com
 	name = Brian Atlas
+
+[credential "https://github.com"]
+    helper = github-main
+
+[init]
+    defaultBranch = main
